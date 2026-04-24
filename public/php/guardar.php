@@ -10,7 +10,7 @@ if (!$mongoUri) {
     http_response_code(500);
     die("Configuration error: MONGODB_URI is not defined.");
 }
-$databaseName   = "estudents";
+$databaseName   = "students";
 $collectionName = "Customer";
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
