@@ -1,98 +1,158 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Formulario de registro de estudiante" />
-  <title>Registro de Estudiante</title>
+  <meta name="description" content="Student registration form for academic enrollment" />
+  <title>Student Registration</title>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <div class="container">
-    <h1>Registro de Estudiante</h1>
+  <header class="page-header">
+    <span class="page-header__title">STUDENT REGISTRATION</span>
+  </header>
 
-    <form action="php/guardar.php" method="POST">
+  <main class="wrapper">
+    <div class="card">
 
-      <div class="form-group">
-        <label for="nombres">Nombres</label>
-        <input type="text" id="nombres" name="nombres" placeholder="Ej. María José" required />
-      </div>
+      <h1 class="card__heading">STUDENT<br>REGISTRATION</h1>
 
-      <div class="form-group">
-        <label for="apellidos">Apellidos</label>
-        <input type="text" id="apellidos" name="apellidos" placeholder="Ej. López Torres" required />
-      </div>
+      <form id="registration-form" action="php/guardar.php" method="POST">
 
-      <div class="form-group">
-        <label for="cedula">Cédula / ID</label>
-        <input type="text" id="cedula" name="cedula" placeholder="Ej. 1723456789" required />
-      </div>
+        <!-- Section 01: Student Information -->
+        <section class="form-section">
+          <div class="section-label">
+            <span class="section-label__number">01</span>
+            <h2 class="section-label__title">STUDENT INFORMATION</h2>
+          </div>
 
-      <div class="form-group">
-        <label for="correo">Correo Electrónico</label>
-        <input
-          type="email"
-          id="correo"
-          name="correo"
-          placeholder="Ej. estudiante@universidad.edu"
-          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
-          title="Ingresa un correo válido, ej: nombre@dominio.com"
-          required
-        />
-      </div>
+          <div class="field-group">
+            <label class="field-group__label" for="full-name">FULL NAME</label>
+            <input
+              class="field-group__input"
+              type="text"
+              id="full-name"
+              name="full_name"
+              placeholder="FULL NAME"
+              required
+            />
+          </div>
 
-      <div class="form-group">
-        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
-        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
-      </div>
+          <div class="field-group">
+            <label class="field-group__label" for="id-number">ID NUMBER</label>
+            <input
+              class="field-group__input"
+              type="text"
+              id="id-number"
+              name="id_number"
+              placeholder="ID NUMBER"
+              minlength="5"
+              title="Please enter a valid ID number (at least 5 characters)"
+              required
+            />
+          </div>
 
-      <div class="form-group">
-        <label for="carrera">Carrera</label>
-        <select id="carrera" name="carrera" required>
-          <option value="" disabled selected>Selecciona una carrera</option>
-          <option value="Ingeniería en Sistemas">Ingeniería en Sistemas</option>
-          <option value="Administración de Empresas">Administración de Empresas</option>
-          <option value="Psicología">Psicología</option>
-          <option value="Medicina">Medicina</option>
-          <option value="Derecho">Derecho</option>
-          <option value="Diseño Gráfico">Diseño Gráfico</option>
-        </select>
-      </div>
+          <div class="field-group">
+            <label class="field-group__label" for="birth-date">DATE OF BIRTH</label>
+            <input
+              class="field-group__input"
+              type="date"
+              id="birth-date"
+              name="birth_date"
+              required
+            />
+          </div>
+        </section>
 
-      <div class="form-group">
-        <label for="semestre">Semestre</label>
-        <select id="semestre" name="semestre" required>
-          <option value="" disabled selected>Selecciona el semestre</option>
-          <option value="1">1°</option>
-          <option value="2">2°</option>
-          <option value="3">3°</option>
-          <option value="4">4°</option>
-          <option value="5">5°</option>
-          <option value="6">6°</option>
-          <option value="7">7°</option>
-          <option value="8">8°</option>
-        </select>
-      </div>
+        <!-- Section 02: Academic Level -->
+        <section class="form-section">
+          <div class="section-label">
+            <span class="section-label__number">02</span>
+            <h2 class="section-label__title">ACADEMIC LEVEL</h2>
+          </div>
 
-      <div class="form-group">
-        <label for="modalidad">Modalidad</label>
-        <div class="radio-group">
-          <label><input type="radio" name="modalidad" value="Presencial" required /> Presencial</label>
-          <label><input type="radio" name="modalidad" value="Virtual" /> Virtual</label>
-          <label><input type="radio" name="modalidad" value="Híbrida" /> Híbrida</label>
-        </div>
-      </div>
+          <div class="field-group">
+            <label class="field-group__label" for="educational-level">EDUCATIONAL LEVEL</label>
+            <select class="field-group__select" id="educational-level" name="educational_level" required>
+              <option value="Elementary">ELEMENTARY</option>
+              <option value="Middle School">MIDDLE SCHOOL</option>
+              <option value="High School">HIGH SCHOOL</option>
+              <option value="Undergraduate">UNDERGRADUATE</option>
+              <option value="Graduate">GRADUATE</option>
+            </select>
+          </div>
 
-      <div class="form-group">
-        <label for="observaciones">Observaciones</label>
-        <textarea id="observaciones" name="observaciones" rows="3" placeholder="Información adicional..."></textarea>
-      </div>
+          <div class="field-group">
+            <label class="field-group__label" for="grade">GRADE</label>
+            <input
+              class="field-group__input"
+              type="text"
+              id="grade"
+              name="grade"
+              placeholder="GRADE"
+              required
+            />
+          </div>
+        </section>
 
-      <button type="submit" class="btn-submit">Registrar Estudiante</button>
+        <!-- Section 03: Allergies or Diseases -->
+        <section class="form-section">
+          <div class="section-label">
+            <span class="section-label__number">03</span>
+            <h2 class="section-label__title">ALLERGIES OR DISEASES</h2>
+          </div>
 
-    </form>
-  </div>
+          <fieldset class="field-group field-group--radio-row">
+            <legend class="field-group__label">DO YOU HAVE ANY ALLERGIES OR DISEASES?</legend>
+            <div class="radio-row">
+              <label class="radio-row__option" for="allergies-yes">
+                <input
+                  class="radio-row__input"
+                  type="radio"
+                  id="allergies-yes"
+                  name="has_allergies"
+                  value="yes"
+                  required
+                />
+                YES
+              </label>
+              <label class="radio-row__option" for="allergies-no">
+                <input
+                  class="radio-row__input"
+                  type="radio"
+                  id="allergies-no"
+                  name="has_allergies"
+                  value="no"
+                  checked
+                />
+                NO
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="field-group">
+            <label class="field-group__label" for="medical-description">DESCRIPTION</label>
+            <textarea
+              class="field-group__textarea"
+              id="medical-description"
+              name="medical_description"
+              rows="4"
+              placeholder="IMPORTANT MEDICAL DETAILS..."
+            ></textarea>
+          </div>
+        </section>
+
+        <hr class="divider" />
+
+        <button type="submit" class="btn-submit" id="btn-complete-registration">
+          COMPLETE<br>REGISTRATION
+        </button>
+
+      </form>
+
+    </div>
+  </main>
 
 </body>
 </html>
