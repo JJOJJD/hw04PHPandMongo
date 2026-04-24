@@ -1,8 +1,9 @@
 services:
   - type: web
-    name: formweb-estudiante
+    name: hw04PHPandMongo
     runtime: docker
+    dockerContext: .
     dockerfilePath: ./Dockerfile
     envVars:
       - key: MONGODB_URI
-        sync: false   # Lo defines manualmente en el dashboard de Render
+        sync: false
