@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Formulario de registro de estudiante" />
+  <title>Registro de Estudiante</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <div class="container">
+    <h1>Registro de Estudiante</h1>
+
+    <form action="php/guardar.php" method="POST">
+
+      <div class="form-group">
+        <label for="nombres">Nombres</label>
+        <input type="text" id="nombres" name="nombres" placeholder="Ej. María José" required />
+      </div>
+
+      <div class="form-group">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" placeholder="Ej. López Torres" required />
+      </div>
+
+      <div class="form-group">
+        <label for="cedula">Cédula / ID</label>
+        <input type="text" id="cedula" name="cedula" placeholder="Ej. 1723456789" required />
+      </div>
+
+      <div class="form-group">
+        <label for="correo">Correo Electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          placeholder="Ej. estudiante@universidad.edu"
+          pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
+          title="Ingresa un correo válido, ej: nombre@dominio.com"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required />
+      </div>
+
+      <div class="form-group">
+        <label for="carrera">Carrera</label>
+        <select id="carrera" name="carrera" required>
+          <option value="" disabled selected>Selecciona una carrera</option>
+          <option value="Ingeniería en Sistemas">Ingeniería en Sistemas</option>
+          <option value="Administración de Empresas">Administración de Empresas</option>
+          <option value="Psicología">Psicología</option>
+          <option value="Medicina">Medicina</option>
+          <option value="Derecho">Derecho</option>
+          <option value="Diseño Gráfico">Diseño Gráfico</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="semestre">Semestre</label>
+        <select id="semestre" name="semestre" required>
+          <option value="" disabled selected>Selecciona el semestre</option>
+          <option value="1">1°</option>
+          <option value="2">2°</option>
+          <option value="3">3°</option>
+          <option value="4">4°</option>
+          <option value="5">5°</option>
+          <option value="6">6°</option>
+          <option value="7">7°</option>
+          <option value="8">8°</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="modalidad">Modalidad</label>
+        <div class="radio-group">
+          <label><input type="radio" name="modalidad" value="Presencial" required /> Presencial</label>
+          <label><input type="radio" name="modalidad" value="Virtual" /> Virtual</label>
+          <label><input type="radio" name="modalidad" value="Híbrida" /> Híbrida</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="observaciones">Observaciones</label>
+        <textarea id="observaciones" name="observaciones" rows="3" placeholder="Información adicional..."></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit">Registrar Estudiante</button>
+
+    </form>
+  </div>
+
+</body>
+</html>

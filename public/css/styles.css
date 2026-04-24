@@ -1,0 +1,109 @@
+/* ===== Reset básico ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fef6fb;
+  color: #444;
+  padding: 30px 15px;
+}
+
+/* ===== Contenedor ===== */
+.container {
+  max-width: 560px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border: 1px solid #f0d9ec;
+  border-radius: 10px;
+  padding: 35px 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #9b5ea2;
+  margin-bottom: 25px;
+}
+
+/* ===== Grupos de campos ===== */
+.form-group {
+  margin-bottom: 18px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: #7a4f85;
+  margin-bottom: 5px;
+}
+
+/* ===== Inputs, selects y textarea ===== */
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  width: 100%;
+  padding: 9px 12px;
+  border: 1px solid #e0b8e8;
+  border-radius: 6px;
+  background-color: #fdf0ff;
+  color: #444;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #c97dd4;
+  background-color: #fce8ff;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* ===== Radio buttons ===== */
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  font-weight: normal;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+input[type="radio"] {
+  accent-color: #c97dd4;
+}
+
+/* ===== Botón ===== */
+.btn-submit {
+  width: 100%;
+  padding: 11px;
+  background-color: #d9a8e8;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.btn-submit:hover {
+  background-color: #c97dd4;
+}
